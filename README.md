@@ -19,7 +19,7 @@ A movie ticket booking web application built using **MERN stack** .
 ## 📁 Project Structure
 
 ```text
-CineGo/
+Moviesmod/
 ├── frontend/
 ├── backend/
 ├── .gitignore
