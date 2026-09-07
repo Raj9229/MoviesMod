@@ -7,7 +7,7 @@ function Navbar() {
         
         {/* Logo */}
         <Link to="/" className="text-2xl font-bold text-red-500">
-          CineGo
+          MoviesMod
         </Link>
 
         {/* Navigation */}
