@@ -4,7 +4,6 @@ require("dotenv").config();
 
 const app = express();
 
-require("./model/db.js");
 const UserModel = require("./model/usermodel");
 
 app.use(cors());
@@ -36,7 +35,7 @@ app.get("/api/movies", (req, res) => {
 });
 
 app.get('/create', async (req, res) => {
-    let name = "raj";
+    let name = "rajaaaaaaaaaa";
     let email = "raj@example.com";
     let imgUrl = "https://example.com/raj.jpg";
     let createdUser = await UserModel.create({name, email, imgUrl});
