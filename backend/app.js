@@ -4,6 +4,9 @@ require("dotenv").config();
 
 const app = express();
 
+require("./model/db.js");
+const UserModel = require("./model/usermodel");
+
 app.use(cors());
 app.use(express.json());
 
@@ -30,6 +33,22 @@ const movies = [
 
 app.get("/api/movies", (req, res) => {
   res.json(movies);
+});
+
+app.get('/create', async (req, res) => {
+    let name = "raj";
+    let email = "raj@example.com";
+    let imgUrl = "https://example.com/raj.jpg";
+    let createdUser = await UserModel.create({name, email, imgUrl});
+    res.json({message: "User created successfully"});
+});
+
+
+app.get("/users", async (req, res) => {
+  const users = await UserModel.find();
+
+  res.json(users);
+  console.log("Users fetched successfully");
 });
 
 
