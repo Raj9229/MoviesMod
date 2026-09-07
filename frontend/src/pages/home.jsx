@@ -34,9 +34,6 @@ function Home() {
           </button>
         </div>
       </section>
-
-      
-
     </div>
   );
 }
