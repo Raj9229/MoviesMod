@@ -35,7 +35,7 @@ app.get("/api/movies", (req, res) => {
 });
 
 app.get('/create', async (req, res) => {
-    let name = "rajaaaaaaaaaa";
+    let name = "rajuu";
     let email = "raj@example.com";
     let imgUrl = "https://example.com/raj.jpg";
     let createdUser = await UserModel.create({name, email, imgUrl});

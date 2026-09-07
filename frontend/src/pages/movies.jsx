@@ -5,7 +5,7 @@ function Movies() {
   const [movies, setMovies] = useState([]);
 
   useEffect(() => {
-    api.get("/movies").then((response) => {
+    api.get("/api/movies").then((response) => {
       setMovies(response.data);
     });
   }, []);

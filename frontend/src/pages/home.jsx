@@ -1,14 +1,13 @@
 import { useEffect, useState } from "react";
 import api from "../services/api";
-import axios from "axios";
 
 
 function Home() {
   const [users, setusers] = useState([]);
 
-  useEffect(async () => {
+  useEffect(() => {
       try {
-        const response = await axios.get("http://localhost:5000/users");
+        const response = api.get("/");
         setusers(response.data);
       } catch (error) {
         console.log("Error fetching users:", error);
@@ -36,21 +35,7 @@ function Home() {
         </div>
       </section>
 
-      {/* Movies */}
-      <section className="mx-auto max-w-6xl px-6 py-10">
-        <h2 className="mb-6 text-3xl font-bold">
-          Now Showing
-        </h2>
-
-        <div className="grid gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
-          {users.map((user) => (
-            <MovieCard
-              key={user._id}
-              movie={user.name}
-            />
-          ))}
-        </div>
-      </section>
+      
 
     </div>
   );
