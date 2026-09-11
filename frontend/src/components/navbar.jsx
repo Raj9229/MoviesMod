@@ -18,7 +18,7 @@ function Navbar() {
           >
             Home
           </Link>
-
+          
           <Link
             to="/movies"
             className="text-gray-300 transition hover:text-white"

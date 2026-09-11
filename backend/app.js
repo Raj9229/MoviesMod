@@ -5,9 +5,14 @@ require("dotenv").config();
 const app = express();
 
 const UserModel = require("./model/usermodel");
+const MovieModel = require("./model/moviemodel");
 
 app.use(cors());
 app.use(express.json());
+
+
+
+
 
 app.get("/", (req, res) => {
   res.json({
@@ -15,32 +20,25 @@ app.get("/", (req, res) => {
   });
 });
 
-const movies = [
-  {
-    id: 1,
-    title: "Avengers",
-  },
-  {
-    id: 2,
-    title: "Interstellar",
-  },
-  {
-    id: 3,
-    title: "Inception",
-  },
-];
 
-app.get("/api/movies", (req, res) => {
+
+
+app.get("/createmovies", (req, res) => {
+
+  let { title, description, language } = req.body;
+  let newmovie =  MovieModel.create({
+    title,
+    description,
+    language
+  });
+  
+});
+
+app.get("/movies", (req, res) => {
   res.json(movies);
 });
 
-app.get('/create', async (req, res) => {
-    let name = "rajuu";
-    let email = "raj@example.com";
-    let imgUrl = "https://example.com/raj.jpg";
-    let createdUser = await UserModel.create({name, email, imgUrl});
-    res.json({message: "User created successfully"});
-});
+
 
 
 app.get("/users", async (req, res) => {
